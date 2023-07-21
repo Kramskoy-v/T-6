@@ -1,0 +1,30 @@
+$dark: #292F35;
+
+@mixin montserrat-light{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+}
+@mixin montserrat-regular {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+}
+@mixin montserrat-medium {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+}
+@mixin montserrat-semibold {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+}
+@mixin montserrat-bold {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+@mixin montserrat-italic {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+
+
