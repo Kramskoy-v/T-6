@@ -1,17 +1,11 @@
 .main-menu {
+  position: absolute;
+  left: 15px;
+  top:4px;
   width: 160px;
-  flex-shrink: 0;
-
-  &__list {
-  }
-
-  &__item {
+   &__item {
     cursor: pointer;
-
-
-    &:not(:last-child) {
-      margin-bottom: 21px;
-    }
+    margin-bottom: 14px;
 
     &.border-bottom {
       padding-bottom: 20px;
@@ -35,12 +29,15 @@
 
   &__submenu {
     margin-left: 30px;
-    padding-top: 10px;
-    display: none;
+    padding-top: 8px;
+    height: 0;
+    overflow-y: hidden;
+    position: absolute;
+    z-index: -1;
 
     li {
       &:not(:last-child) {
-        margin-bottom: 10px;
+        margin-bottom: 4px;
       }
 
       a {
@@ -67,9 +64,15 @@
       }
 
       .main-menu__submenu {
-        display: block;
+        height: max-content;
+        overflow-y: visible;
+        position: static;
       }
     }
+  }
+
+  &__item-btn {
+    margin-top: 33px;
   }
 
   .blue-btn {

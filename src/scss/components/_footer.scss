@@ -1,3 +1,42 @@
 .footer {
-  height: 138px;
+  border-top: 1px solid #E3DDDD;
+
+  .container {
+    max-width: 1250px;
+    padding: 19px 15px 65px 230px;
+  }
+
+  p {
+    font-size: 11px;
+  }
+
+  &__top {
+    margin-bottom: 5px;
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+
+    > p {
+      max-width: 310px;
+      line-height: 1.2;
+    }
+  }
+
+  &__links {
+    display: flex;
+
+    li {
+      &:not(:last-child) {
+        margin-right: 30px;
+      }
+
+      a {
+        color: #000;
+        font-size: 11px;
+        text-decoration-line: underline;
+      }
+    }
+  }
 }
