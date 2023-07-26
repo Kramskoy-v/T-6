@@ -1,10 +1,15 @@
 .home-page {
   .main-container {
-    max-width: 1230px;
-    margin: 0 auto;
-    padding: 0 15px 0 200px;
+    display: block;
+    padding: 20px 15px 75px 225px;
     position: relative;
+  }
 
+  .main-menu {
+    position: absolute;
+    left: 40px;
+    top: 25px;
+    margin-right: 0;
   }
 
   .home-swiper {
@@ -14,6 +19,7 @@
 
     .swiper-slide {
       object-position: center;
+
       img {
         height: 100%;
         border-radius: 10px;
@@ -45,7 +51,6 @@
       }
 
       p {
-
         color: #FFF;
         font-size: 13px;
         font-weight: 500;
@@ -104,8 +109,6 @@
   }
 
   .events {
-    margin-bottom: 75px;
-
     &__search {
       height: 35px;
       display: flex;
@@ -121,13 +124,13 @@
       &._active {
         svg {
           path {
-            fill: #064AB1;
+            fill: $blue;
           }
         }
       }
     }
 
-    .input-wrapper {
+    .search-wrapper {
       width: 720px;
       margin-right: 5px;
     }
@@ -136,21 +139,6 @@
       flex-shrink: 0;
       width: 190px;
       margin-right: 5px;
-
-      .choices__list--single {
-        padding: 1px 16px 4px 4px;
-      }
-
-      .choices {
-        height: 35px;
-
-        &__inner {
-          min-height: 35px;
-          height: 35px;
-          padding: 3px 10px 9px 14px;
-
-        }
-      }
     }
 
 
@@ -207,10 +195,14 @@
           }
         }
 
-        .events__item-create > a {
-          padding-left: 11px;
-          justify-content: flex-start;
+        .events__item-create {
+          .events__link {
+            padding-left: 11px;
+            justify-content: flex-start;
+          }
         }
+
+
       }
 
     }
@@ -224,20 +216,23 @@
       background: #FFF;
       transition: all .3s;
 
-      > a {
-        display: flex;
-        width: 100%;
-        height: 100%;
-      }
+      &:not(:last-child) {
+        > a {
+          display: flex;
+          width: 100%;
+          height: 100%;
+        }
 
-      &:hover {
-        border-bottom: 1px solid #064AB1;
-        transition: all .3s;
+        &:hover {
+          border-bottom: 1px solid $blue;
+          transition: all .3s;
 
-        h3 {
-          color: #064AB1;
+          h3 {
+            color: $blue;
+          }
         }
       }
+
     }
 
     &__image {
@@ -276,7 +271,7 @@
 
         &:nth-of-type(3) {
           max-height: 30px;
-          overflow-y: hidden;
+
         }
 
         > svg {
@@ -287,13 +282,18 @@
 
     &__item-create {
       border-style: dashed;
-      border-color: #064AB1;
+      border-color: $blue;
+      overflow: visible;
+      position: relative;
 
-      > a {
+      .events__link {
+        display: flex;
         width: 100%;
+        height: 100%;
         align-items: center;
         justify-content: center;
-        color: #064AB1;
+        color: $blue;
+
 
         h4 {
           font-size: 17px;
@@ -301,7 +301,45 @@
         }
       }
     }
+
+    &__modal {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 20px;
+      width: 406px;
+      padding: 20px 60px;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      border-radius: 5px;
+      border: 1px solid #E3DDDD;
+      background: #FFF;
+      box-shadow: 0 0 10px 0 rgba(159, 159, 159, 0.25);
+      display: none;
+
+      &._active {
+        display: flex;
+      }
+
+      h3 {
+        margin-bottom: 5px;
+        font-size: 15px;
+        font-weight: 600;
+      }
+
+      p {
+        margin-bottom: 10px;
+        font-size: 13px;
+        font-weight: 500;
+        line-height: 18px;
+      }
+    }
+
+    &__modal-close {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+    }
   }
-
-
 }

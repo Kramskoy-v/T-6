@@ -1,9 +1,9 @@
 .main-menu {
-  position: absolute;
-  left: 15px;
-  top:4px;
   width: 160px;
-   &__item {
+  margin-right: 25px;
+  flex-shrink: 0;
+
+  &__item {
     cursor: pointer;
     margin-bottom: 14px;
 

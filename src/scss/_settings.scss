@@ -199,7 +199,16 @@ h1 {
   padding: 0;
 }
 
+.main-container {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 0 15px 0 40px;
+  display: flex;
+}
 
+.content {
+  width: 100%;
+}
 
 .modal {
   position: fixed;
@@ -262,8 +271,9 @@ h1 {
   color: #ffffff;
 }
 
-.input-wrapper {
+.search-wrapper {
   position: relative;
+  height: 35px;
 
   svg {
     position: absolute;
@@ -278,29 +288,16 @@ h1 {
     padding-left: 28px;
     border-radius: 3px;
     border: 1px solid #E3DDDD;
-    border-bottom: 1px solid #868585;
+    border-bottom-color: #868585;
     background: #FFF;
     color: #292F35;
     font-size: 13px;
   }
 }
 
-.choices__inner {
-  border: 1px solid #E3DDDD;
-  border-bottom: 1px solid #868585;
-  border-radius: 3px;
-  background: #FFF;
-  color: #292F35;
-  font-size: 13px;
-}
-
-.choices__list--dropdown .choices__item, .choices__list[aria-expanded] .choices__item {
-  font-size: 13px;
-  color: #292F35;
-}
-
-@media (min-width: 640px) {
-  .choices__list--dropdown .choices__item--selectable, .choices__list[aria-expanded] .choices__item--selectable {
-    padding-right: 10px;
+.df{
+  display: flex;
+  &._fs{
+    justify-content: flex-start;
   }
 }

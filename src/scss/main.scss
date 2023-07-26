@@ -4,6 +4,7 @@
 
 //Страницы
 @import "pages/home";
+@import "pages/create-event";
 
 
 //Медиа
@@ -11,7 +12,10 @@
 
 //Компоненты
 @import "./components/main-menu";
+@import "./components/selects";
 @import "./components/pagination";
+@import "./components/navigation-row";
+@import "./components/big-form";
 
 
 @import "./components/header";
