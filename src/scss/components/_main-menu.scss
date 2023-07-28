@@ -31,9 +31,7 @@
     margin-left: 30px;
     padding-top: 8px;
     height: 0;
-    overflow-y: hidden;
-    position: absolute;
-    z-index: -1;
+   display: none;
 
     li {
       &:not(:last-child) {
@@ -64,9 +62,8 @@
       }
 
       .main-menu__submenu {
+       display: block;
         height: max-content;
-        overflow-y: visible;
-        position: static;
       }
     }
   }

@@ -49,6 +49,7 @@
       width: 100%;
       height: 35px;
       padding-left: 10px;
+      font-size: 13px;
       border-radius: 3px;
       border: 1px solid #E3DDDD;
       border-bottom-color: #868585;
@@ -155,11 +156,6 @@
     }
   }
 
-  &__btn-close {
-    position: absolute;
-    right: 15px;
-    top: 15px;
-  }
 
   &__desc {
     max-width: 808px;
