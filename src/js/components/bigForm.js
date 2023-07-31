@@ -110,3 +110,112 @@ if (addToListBtns) {
         })
     })
 }
+
+
+//показ и валидация пароля
+
+const showPassBtn = document.querySelector('.big-form__btn-show-pass')
+const firstInputPass = document.querySelector('.big-form__wrapper.password input')
+const secondWrapperPass = document.querySelector('.big-form__wrapper.second-password')
+const secondInputPass = document.querySelector('.big-form__wrapper.second-password input')
+const errorWarning = document.querySelector('.big-form__error-warning')
+const clearValue = document.querySelector('.big-form__btn-clear')
+const successful = document.querySelectorAll('.big-form__wrapper.successful')
+
+if (showPassBtn) {
+    showPassBtn.addEventListener('click', () => {
+        if (firstInputPass.type === 'password') {
+            firstInputPass.type = 'text'
+            showPassBtn.classList.remove('_open')
+        } else {
+            firstInputPass.type = 'password'
+            showPassBtn.classList.add('_open')
+        }
+    })
+}
+
+const removeOkSuccessful = () => {
+    successful.forEach(item => {
+        if (item.classList.contains('_ok')) {
+            item.classList.remove('_ok')
+        }
+    })
+}
+
+const addOkSuccessful = () => {
+    successful.forEach(item => item.classList.add('_ok'))
+}
+
+if (firstInputPass) {
+    firstInputPass.addEventListener('input', () => {
+        if (firstInputPass.value.trim() !== secondInputPass.value.trim()) {
+            removeOkSuccessful()
+        }
+    })
+}
+
+if (secondInputPass) {
+    secondInputPass.addEventListener('input', () => {
+        if (secondInputPass.value.trim() === '') {
+            secondWrapperPass.classList.add('_error')
+            errorWarning.innerText = 'Необходимо ввести пароль еще раз'
+            clearValue.classList.remove('_active')
+            removeOkSuccessful()
+        } else if (secondInputPass.value.trim() !== firstInputPass.value.trim()) {
+            secondWrapperPass.classList.add('_error')
+            errorWarning.innerText = 'Пароли не совпадают'
+            clearValue.classList.add('_active')
+            removeOkSuccessful()
+
+            clearValue.addEventListener('click', () => {
+                secondInputPass.value = ''
+                clearValue.classList.remove('_active')
+            })
+        } else {
+            secondWrapperPass.classList.remove('_error')
+            clearValue.classList.remove('_active')
+            addOkSuccessful()
+        }
+    })
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
